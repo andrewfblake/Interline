@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="168414457e1f44d5a1fbc0f47672ec63" Name="Diagram1">
+        <EntityTypeShape EntityType="AirlineModel.AirlineFeature" Width="2.375" PointX="5.75" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.AirlineTaxonomy" Width="2.375" PointX="4" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.Ancillary" Width="2.375" PointX="6.25" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.CancelRestriction" Width="2.75" PointX="8.5" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.CarrierAcceptanceRule" Width="2.375" PointX="5.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.ChangeRestriction" Width="2.75" PointX="8.5" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.Market" Width="2.375" PointX="4.125" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.MinConnectTimeAcceptanceRule" Width="2.5" PointX="2.375" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.OperatingLeg" Width="2.5" PointX="11" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.Product" Width="2.5" PointX="2.125" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.ProductCatalogue" Width="2.5" PointX="0.5" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.ProductToAncillary" Width="2.125" PointX="2.25" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.Resource" Width="2.875" PointX="9" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.Route" Width="2.5" PointX="7.375" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.SeatAttribute" Width="2.125" PointX="11.5" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.SeatMap" Width="2.625" PointX="8.625" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.Settlement" Width="2.625" PointX="0.5" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.sysdiagram" Width="1.5" PointX="12.375" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.TransportVehicle" Width="2.5" PointX="2.375" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.TransportVehicleToProduct" Width="2.625" PointX="5.5" PointY="12.875" IsExpanded="true" />
+        <AssociationConnector Association="AirlineModel.FK_AirlineFeature_AirlineTaxonomy" ManuallyRouted="false" />
+        <AssociationConnector Association="AirlineModel.FK_Ancillary_ProductCatalogue" ManuallyRouted="false" />
+        <AssociationConnector Association="AirlineModel.FK_ProductToAncillary_Ancillary" ManuallyRouted="false" />
+        <AssociationConnector Association="AirlineModel.FK_CancelRestriction_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="AirlineModel.FK_CarrierAcceptanceRule_ProductCatalogue" ManuallyRouted="true" >
+          <ConnectorPoint PointX="3" PointY="3.15625" />
+          <ConnectorPoint PointX="3.6118750000000004" PointY="3.15625" />
+          <ConnectorPoint PointX="3.6118750000000004" PointY="6.0625" />
+          <ConnectorPoint PointX="6.9375" PointY="6.0625" />
+          <ConnectorPoint PointX="6.9375" PointY="7.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="AirlineModel.FK_ChangeRestriction_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="AirlineModel.FK_Market_ProductCatalogue" ManuallyRouted="false" />
+        <AssociationConnector Association="AirlineModel.FK_Route_Market" ManuallyRouted="false" />
+        <AssociationConnector Association="AirlineModel.FK_MinConnectTimeAcceptanceRule_ProductCatalogue" ManuallyRouted="false" />
+        <AssociationConnector Association="AirlineModel.FK_OperatingLeg_Route" ManuallyRouted="false" />
+        <AssociationConnector Association="AirlineModel.FK_ProductToAncillary_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="AirlineModel.FK_TransportVehicleToProducts_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="AirlineModel.FK_Settlement_ProductCatalogue" ManuallyRouted="false" />
+        <AssociationConnector Association="AirlineModel.FK_TransportVehicle_ProductCatalogue" ManuallyRouted="false" />
+        <AssociationConnector Association="AirlineModel.FK_SeatAttribute_SeatMap" ManuallyRouted="false" />
+        <AssociationConnector Association="AirlineModel.FK_SeatMap_TransportVehicleToProducts" ManuallyRouted="false" />
+        <AssociationConnector Association="AirlineModel.FK_TransportVehicleToProducts_TransportVehicle" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AirlineModel.Airline" Width="1.5" PointX="0.5" PointY="0.5" />
+        <AssociationConnector Association="AirlineModel.AirlineProductCatalogue" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,1281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AirlineModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AirlineModelStoreContainer">
+    <EntitySet Name="AirlineFeatures" EntityType="AirlineModel.Store.AirlineFeatures" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AirlineTaxonomies" EntityType="AirlineModel.Store.AirlineTaxonomies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Ancillaries" EntityType="AirlineModel.Store.Ancillaries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CancelRestrictions" EntityType="AirlineModel.Store.CancelRestrictions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CarrierAcceptanceRules" EntityType="AirlineModel.Store.CarrierAcceptanceRules" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChangeRestrictions" EntityType="AirlineModel.Store.ChangeRestrictions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Markets" EntityType="AirlineModel.Store.Markets" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MinConnectTimeAcceptanceRules" EntityType="AirlineModel.Store.MinConnectTimeAcceptanceRules" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OperatingLegs" EntityType="AirlineModel.Store.OperatingLegs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Products" EntityType="AirlineModel.Store.Products" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductCatalogues" EntityType="AirlineModel.Store.ProductCatalogues" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductToAncillaries" EntityType="AirlineModel.Store.ProductToAncillaries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Resources" EntityType="AirlineModel.Store.Resources" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Routes" EntityType="AirlineModel.Store.Routes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SeatAttributes" EntityType="AirlineModel.Store.SeatAttributes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SeatMaps" EntityType="AirlineModel.Store.SeatMaps" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Settlements" EntityType="AirlineModel.Store.Settlements" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="AirlineModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TransportVehicles" EntityType="AirlineModel.Store.TransportVehicles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TransportVehicleToProducts" EntityType="AirlineModel.Store.TransportVehicleToProducts" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_AirlineFeature_AirlineTaxonomy" Association="AirlineModel.Store.FK_AirlineFeature_AirlineTaxonomy">
+      <End Role="AirlineTaxonomy" EntitySet="AirlineTaxonomies" />
+      <End Role="AirlineFeature" EntitySet="AirlineFeatures" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ancillary_ProductCatalogue" Association="AirlineModel.Store.FK_Ancillary_ProductCatalogue">
+      <End Role="ProductCatalogue" EntitySet="ProductCatalogues" />
+      <End Role="Ancillary" EntitySet="Ancillaries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductToAncillary_Ancillary" Association="AirlineModel.Store.FK_ProductToAncillary_Ancillary">
+      <End Role="Ancillary" EntitySet="Ancillaries" />
+      <End Role="ProductToAncillary" EntitySet="ProductToAncillaries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CancelRestriction_Product" Association="AirlineModel.Store.FK_CancelRestriction_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="CancelRestriction" EntitySet="CancelRestrictions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarrierAcceptanceRule_ProductCatalogue" Association="AirlineModel.Store.FK_CarrierAcceptanceRule_ProductCatalogue">
+      <End Role="ProductCatalogue" EntitySet="ProductCatalogues" />
+      <End Role="CarrierAcceptanceRule" EntitySet="CarrierAcceptanceRules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChangeRestriction_Product" Association="AirlineModel.Store.FK_ChangeRestriction_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ChangeRestriction" EntitySet="ChangeRestrictions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Market_ProductCatalogue" Association="AirlineModel.Store.FK_Market_ProductCatalogue">
+      <End Role="ProductCatalogue" EntitySet="ProductCatalogues" />
+      <End Role="Market" EntitySet="Markets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Route_Market" Association="AirlineModel.Store.FK_Route_Market">
+      <End Role="Market" EntitySet="Markets" />
+      <End Role="Route" EntitySet="Routes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MinConnectTimeAcceptanceRule_ProductCatalogue" Association="AirlineModel.Store.FK_MinConnectTimeAcceptanceRule_ProductCatalogue">
+      <End Role="ProductCatalogue" EntitySet="ProductCatalogues" />
+      <End Role="MinConnectTimeAcceptanceRule" EntitySet="MinConnectTimeAcceptanceRules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OperatingLeg_Route" Association="AirlineModel.Store.FK_OperatingLeg_Route">
+      <End Role="Route" EntitySet="Routes" />
+      <End Role="OperatingLeg" EntitySet="OperatingLegs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductToAncillary_Product" Association="AirlineModel.Store.FK_ProductToAncillary_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductToAncillary" EntitySet="ProductToAncillaries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransportVehicleToProducts_Product" Association="AirlineModel.Store.FK_TransportVehicleToProducts_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="TransportVehicleToProducts" EntitySet="TransportVehicleToProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Settlement_ProductCatalogue" Association="AirlineModel.Store.FK_Settlement_ProductCatalogue">
+      <End Role="ProductCatalogue" EntitySet="ProductCatalogues" />
+      <End Role="Settlement" EntitySet="Settlements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransportVehicle_ProductCatalogue" Association="AirlineModel.Store.FK_TransportVehicle_ProductCatalogue">
+      <End Role="ProductCatalogue" EntitySet="ProductCatalogues" />
+      <End Role="TransportVehicle" EntitySet="TransportVehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SeatAttribute_SeatMap" Association="AirlineModel.Store.FK_SeatAttribute_SeatMap">
+      <End Role="SeatMap" EntitySet="SeatMaps" />
+      <End Role="SeatAttribute" EntitySet="SeatAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SeatMap_TransportVehicleToProducts" Association="AirlineModel.Store.FK_SeatMap_TransportVehicleToProducts">
+      <End Role="TransportVehicleToProducts" EntitySet="TransportVehicleToProducts" />
+      <End Role="SeatMap" EntitySet="SeatMaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransportVehicleToProducts_TransportVehicle" Association="AirlineModel.Store.FK_TransportVehicleToProducts_TransportVehicle">
+      <End Role="TransportVehicle" EntitySet="TransportVehicles" />
+      <End Role="TransportVehicleToProducts" EntitySet="TransportVehicleToProducts" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AirlineFeatures">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="AirlineTaxonomyCode" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="Type" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="Vale" Type="nchar" Nullable="true" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="AirlineTaxonomies">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="AnyParentCode" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="Title" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="Description" Type="nchar" Nullable="true" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Ancillaries">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProductCatalogueCode" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Name" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Description" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CancelRestrictions">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProductCode" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CarrierAcceptanceRules">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProductCatalogueCode" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="TransportDesignator" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="AccountingCode" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Type" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Accepted" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ChangeRestrictions">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProductCode" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Markets">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProductCatalogueCode" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="LocationOne" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="LocationTwo" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MinConnectTimeAcceptanceRules">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProductCatalogueCode" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="TransportDesignator" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="AccountingCode" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="LocationCode" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Onward" Type="bit" Nullable="true" />
+    <Property Name="Min" Type="time" Nullable="true" Precision="7" />
+    <Property Name="Max" Type="time" Nullable="true" Precision="7" />
+    <Property Name="Accepted" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="OperatingLegs">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="RouteCode" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="TransportVehicle" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="DepartureTime" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="DepartureDay" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="ServiceStart" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="ServiceEnd" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Name" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Description" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ProductCatalogues">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="TransportDesignator" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="AccountingCode" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Type" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ProductToAncillaries">
+    <Key>
+      <PropertyRef Name="AncillaryCode" />
+      <PropertyRef Name="ProductCode" />
+    </Key>
+    <Property Name="AncillaryCode" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProductCode" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Optional" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Resources">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="AnyParentCode" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="Title" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="Description" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="URL" Type="nchar" Nullable="true" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Routes">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="MarketCode" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="DepartureLocation" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="ArrivalLocation" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SeatAttributes">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="SeatMap" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Row" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Column" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Attributes" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SeatMaps">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="TransportVehicleCode" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="ProductCode" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Floor" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="StartRow" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="EndRow" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Columns" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Attributes" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Settlements">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProductCatalogueCode" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="SettlmentTime" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" Nullable="true" />
+    <Property Name="definition" Type="varbinary(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="TransportVehicles">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProductCatalogueCode" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Type" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Name" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TransportVehicleToProducts">
+    <Key>
+      <PropertyRef Name="TransportVehicleCode" />
+      <PropertyRef Name="ProductCode" />
+    </Key>
+    <Property Name="TransportVehicleCode" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProductCode" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_AirlineFeature_AirlineTaxonomy">
+    <End Role="AirlineTaxonomy" Type="AirlineModel.Store.AirlineTaxonomies" Multiplicity="0..1" />
+    <End Role="AirlineFeature" Type="AirlineModel.Store.AirlineFeatures" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AirlineTaxonomy">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="AirlineFeature">
+        <PropertyRef Name="AirlineTaxonomyCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ancillary_ProductCatalogue">
+    <End Role="ProductCatalogue" Type="AirlineModel.Store.ProductCatalogues" Multiplicity="0..1" />
+    <End Role="Ancillary" Type="AirlineModel.Store.Ancillaries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCatalogue">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Ancillary">
+        <PropertyRef Name="ProductCatalogueCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductToAncillary_Ancillary">
+    <End Role="Ancillary" Type="AirlineModel.Store.Ancillaries" Multiplicity="1" />
+    <End Role="ProductToAncillary" Type="AirlineModel.Store.ProductToAncillaries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ancillary">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="ProductToAncillary">
+        <PropertyRef Name="AncillaryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CancelRestriction_Product">
+    <End Role="Product" Type="AirlineModel.Store.Products" Multiplicity="0..1" />
+    <End Role="CancelRestriction" Type="AirlineModel.Store.CancelRestrictions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="CancelRestriction">
+        <PropertyRef Name="ProductCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarrierAcceptanceRule_ProductCatalogue">
+    <End Role="ProductCatalogue" Type="AirlineModel.Store.ProductCatalogues" Multiplicity="0..1" />
+    <End Role="CarrierAcceptanceRule" Type="AirlineModel.Store.CarrierAcceptanceRules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCatalogue">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="CarrierAcceptanceRule">
+        <PropertyRef Name="ProductCatalogueCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChangeRestriction_Product">
+    <End Role="Product" Type="AirlineModel.Store.Products" Multiplicity="0..1" />
+    <End Role="ChangeRestriction" Type="AirlineModel.Store.ChangeRestrictions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="ChangeRestriction">
+        <PropertyRef Name="ProductCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Market_ProductCatalogue">
+    <End Role="ProductCatalogue" Type="AirlineModel.Store.ProductCatalogues" Multiplicity="0..1" />
+    <End Role="Market" Type="AirlineModel.Store.Markets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCatalogue">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Market">
+        <PropertyRef Name="ProductCatalogueCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Route_Market">
+    <End Role="Market" Type="AirlineModel.Store.Markets" Multiplicity="0..1" />
+    <End Role="Route" Type="AirlineModel.Store.Routes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Market">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Route">
+        <PropertyRef Name="MarketCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MinConnectTimeAcceptanceRule_ProductCatalogue">
+    <End Role="ProductCatalogue" Type="AirlineModel.Store.ProductCatalogues" Multiplicity="0..1" />
+    <End Role="MinConnectTimeAcceptanceRule" Type="AirlineModel.Store.MinConnectTimeAcceptanceRules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCatalogue">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="MinConnectTimeAcceptanceRule">
+        <PropertyRef Name="ProductCatalogueCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OperatingLeg_Route">
+    <End Role="Route" Type="AirlineModel.Store.Routes" Multiplicity="0..1" />
+    <End Role="OperatingLeg" Type="AirlineModel.Store.OperatingLegs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Route">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="OperatingLeg">
+        <PropertyRef Name="RouteCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductToAncillary_Product">
+    <End Role="Product" Type="AirlineModel.Store.Products" Multiplicity="1" />
+    <End Role="ProductToAncillary" Type="AirlineModel.Store.ProductToAncillaries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="ProductToAncillary">
+        <PropertyRef Name="ProductCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransportVehicleToProducts_Product">
+    <End Role="Product" Type="AirlineModel.Store.Products" Multiplicity="1" />
+    <End Role="TransportVehicleToProducts" Type="AirlineModel.Store.TransportVehicleToProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="TransportVehicleToProducts">
+        <PropertyRef Name="ProductCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Settlement_ProductCatalogue">
+    <End Role="ProductCatalogue" Type="AirlineModel.Store.ProductCatalogues" Multiplicity="0..1" />
+    <End Role="Settlement" Type="AirlineModel.Store.Settlements" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCatalogue">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Settlement">
+        <PropertyRef Name="ProductCatalogueCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransportVehicle_ProductCatalogue">
+    <End Role="ProductCatalogue" Type="AirlineModel.Store.ProductCatalogues" Multiplicity="0..1" />
+    <End Role="TransportVehicle" Type="AirlineModel.Store.TransportVehicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCatalogue">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="TransportVehicle">
+        <PropertyRef Name="ProductCatalogueCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SeatAttribute_SeatMap">
+    <End Role="SeatMap" Type="AirlineModel.Store.SeatMaps" Multiplicity="0..1" />
+    <End Role="SeatAttribute" Type="AirlineModel.Store.SeatAttributes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SeatMap">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="SeatAttribute">
+        <PropertyRef Name="SeatMap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SeatMap_TransportVehicleToProducts">
+    <End Role="TransportVehicleToProducts" Type="AirlineModel.Store.TransportVehicleToProducts" Multiplicity="0..1" />
+    <End Role="SeatMap" Type="AirlineModel.Store.SeatMaps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TransportVehicleToProducts">
+        <PropertyRef Name="TransportVehicleCode" />
+        <PropertyRef Name="ProductCode" />
+      </Principal>
+      <Dependent Role="SeatMap">
+        <PropertyRef Name="TransportVehicleCode" />
+        <PropertyRef Name="ProductCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransportVehicleToProducts_TransportVehicle">
+    <End Role="TransportVehicle" Type="AirlineModel.Store.TransportVehicles" Multiplicity="1" />
+    <End Role="TransportVehicleToProducts" Type="AirlineModel.Store.TransportVehicleToProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TransportVehicle">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="TransportVehicleToProducts">
+        <PropertyRef Name="TransportVehicleCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AirlineModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AirlineFeature">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="AirlineTaxonomyCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Vale" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="AirlineTaxonomy" Relationship="Self.FK_AirlineFeature_AirlineTaxonomy" FromRole="AirlineFeature" ToRole="AirlineTaxonomy" />
+        </EntityType>
+        <EntityType Name="AirlineTaxonomy">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="AnyParentCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="AirlineFeatures" Relationship="Self.FK_AirlineFeature_AirlineTaxonomy" FromRole="AirlineTaxonomy" ToRole="AirlineFeature" />
+        </EntityType>
+        <EntityType Name="Ancillary">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductCatalogueCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ProductCatalogue" Relationship="Self.FK_Ancillary_ProductCatalogue" FromRole="Ancillary" ToRole="ProductCatalogue" />
+          <NavigationProperty Name="ProductToAncillaries" Relationship="Self.FK_ProductToAncillary_Ancillary" FromRole="Ancillary" ToRole="ProductToAncillary" />
+        </EntityType>
+        <EntityType Name="CancelRestriction">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_CancelRestriction_Product" FromRole="CancelRestriction" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="CarrierAcceptanceRule">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductCatalogueCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TransportDesignator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AccountingCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Accepted" Type="Boolean" />
+          <NavigationProperty Name="ProductCatalogue" Relationship="Self.FK_CarrierAcceptanceRule_ProductCatalogue" FromRole="CarrierAcceptanceRule" ToRole="ProductCatalogue" />
+        </EntityType>
+        <EntityType Name="ChangeRestriction">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ChangeRestriction_Product" FromRole="ChangeRestriction" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Market">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductCatalogueCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LocationOne" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LocationTwo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ProductCatalogue" Relationship="Self.FK_Market_ProductCatalogue" FromRole="Market" ToRole="ProductCatalogue" />
+          <NavigationProperty Name="Routes" Relationship="Self.FK_Route_Market" FromRole="Market" ToRole="Route" />
+        </EntityType>
+        <EntityType Name="MinConnectTimeAcceptanceRule">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductCatalogueCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TransportDesignator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AccountingCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LocationCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Onward" Type="Boolean" />
+          <Property Name="Min" Type="Time" Precision="7" />
+          <Property Name="Max" Type="Time" Precision="7" />
+          <Property Name="Accepted" Type="Boolean" />
+          <NavigationProperty Name="ProductCatalogue" Relationship="Self.FK_MinConnectTimeAcceptanceRule_ProductCatalogue" FromRole="MinConnectTimeAcceptanceRule" ToRole="ProductCatalogue" />
+        </EntityType>
+        <EntityType Name="OperatingLeg">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RouteCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TransportVehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepartureTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepartureDay" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ServiceStart" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ServiceEnd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Route" Relationship="Self.FK_OperatingLeg_Route" FromRole="OperatingLeg" ToRole="Route" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CancelRestrictions" Relationship="Self.FK_CancelRestriction_Product" FromRole="Product" ToRole="CancelRestriction" />
+          <NavigationProperty Name="ChangeRestrictions" Relationship="Self.FK_ChangeRestriction_Product" FromRole="Product" ToRole="ChangeRestriction" />
+          <NavigationProperty Name="ProductToAncillaries" Relationship="Self.FK_ProductToAncillary_Product" FromRole="Product" ToRole="ProductToAncillary" />
+          <NavigationProperty Name="TransportVehicleToProducts" Relationship="Self.FK_TransportVehicleToProducts_Product" FromRole="Product" ToRole="TransportVehicleToProducts" />
+        </EntityType>
+        <EntityType Name="ProductCatalogue">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TransportDesignator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AccountingCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Ancillaries" Relationship="Self.FK_Ancillary_ProductCatalogue" FromRole="ProductCatalogue" ToRole="Ancillary" />
+          <NavigationProperty Name="CarrierAcceptanceRules" Relationship="Self.FK_CarrierAcceptanceRule_ProductCatalogue" FromRole="ProductCatalogue" ToRole="CarrierAcceptanceRule" />
+          <NavigationProperty Name="Markets" Relationship="Self.FK_Market_ProductCatalogue" FromRole="ProductCatalogue" ToRole="Market" />
+          <NavigationProperty Name="MinConnectTimeAcceptanceRules" Relationship="Self.FK_MinConnectTimeAcceptanceRule_ProductCatalogue" FromRole="ProductCatalogue" ToRole="MinConnectTimeAcceptanceRule" />
+          <NavigationProperty Name="Settlements" Relationship="Self.FK_Settlement_ProductCatalogue" FromRole="ProductCatalogue" ToRole="Settlement" />
+          <NavigationProperty Name="TransportVehicles" Relationship="Self.FK_TransportVehicle_ProductCatalogue" FromRole="ProductCatalogue" ToRole="TransportVehicle" />
+          <NavigationProperty Name="Airline" Relationship="AirlineModel.AirlineProductCatalogue" FromRole="ProductCatalogue" ToRole="Airline" />
+          <Property Name="AirlineCode" Type="Single" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductToAncillary">
+          <Key>
+            <PropertyRef Name="AncillaryCode" />
+            <PropertyRef Name="ProductCode" />
+          </Key>
+          <Property Name="AncillaryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Optional" Type="Boolean" />
+          <NavigationProperty Name="Ancillary" Relationship="Self.FK_ProductToAncillary_Ancillary" FromRole="ProductToAncillary" ToRole="Ancillary" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ProductToAncillary_Product" FromRole="ProductToAncillary" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Resource">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="AnyParentCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="URL" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Route">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MarketCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepartureLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ArrivalLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Market" Relationship="Self.FK_Route_Market" FromRole="Route" ToRole="Market" />
+          <NavigationProperty Name="OperatingLegs" Relationship="Self.FK_OperatingLeg_Route" FromRole="Route" ToRole="OperatingLeg" />
+        </EntityType>
+        <EntityType Name="SeatAttribute">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SeatMap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Row" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Column" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Attributes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SeatMapCode" Relationship="Self.FK_SeatAttribute_SeatMap" FromRole="SeatAttribute" ToRole="SeatMap" />
+        </EntityType>
+        <EntityType Name="SeatMap">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TransportVehicleCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Floor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StartRow" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EndRow" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Columns" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Attributes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SeatAttributes" Relationship="Self.FK_SeatAttribute_SeatMap" FromRole="SeatMap" ToRole="SeatAttribute" />
+          <NavigationProperty Name="TransportVehicleToProduct" Relationship="Self.FK_SeatMap_TransportVehicleToProducts" FromRole="SeatMap" ToRole="TransportVehicleToProducts" />
+        </EntityType>
+        <EntityType Name="Settlement">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductCatalogueCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SettlmentTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ProductCatalogue" Relationship="Self.FK_Settlement_ProductCatalogue" FromRole="Settlement" ToRole="ProductCatalogue" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TransportVehicle">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductCatalogueCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ProductCatalogue" Relationship="Self.FK_TransportVehicle_ProductCatalogue" FromRole="TransportVehicle" ToRole="ProductCatalogue" />
+          <NavigationProperty Name="TransportVehicleToProducts" Relationship="Self.FK_TransportVehicleToProducts_TransportVehicle" FromRole="TransportVehicle" ToRole="TransportVehicleToProducts" />
+        </EntityType>
+        <EntityType Name="TransportVehicleToProduct">
+          <Key>
+            <PropertyRef Name="TransportVehicleCode" />
+            <PropertyRef Name="ProductCode" />
+          </Key>
+          <Property Name="TransportVehicleCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_TransportVehicleToProducts_Product" FromRole="TransportVehicleToProducts" ToRole="Product" />
+          <NavigationProperty Name="SeatMaps" Relationship="Self.FK_SeatMap_TransportVehicleToProducts" FromRole="TransportVehicleToProducts" ToRole="SeatMap" />
+          <NavigationProperty Name="TransportVehicle" Relationship="Self.FK_TransportVehicleToProducts_TransportVehicle" FromRole="TransportVehicleToProducts" ToRole="TransportVehicle" />
+        </EntityType>
+        <Association Name="FK_AirlineFeature_AirlineTaxonomy">
+          <End Role="AirlineTaxonomy" Type="Self.AirlineTaxonomy" Multiplicity="0..1" />
+          <End Role="AirlineFeature" Type="Self.AirlineFeature" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AirlineTaxonomy">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="AirlineFeature">
+              <PropertyRef Name="AirlineTaxonomyCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ancillary_ProductCatalogue">
+          <End Role="ProductCatalogue" Type="Self.ProductCatalogue" Multiplicity="0..1" />
+          <End Role="Ancillary" Type="Self.Ancillary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductCatalogue">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Ancillary">
+              <PropertyRef Name="ProductCatalogueCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductToAncillary_Ancillary">
+          <End Role="Ancillary" Type="Self.Ancillary" Multiplicity="1" />
+          <End Role="ProductToAncillary" Type="Self.ProductToAncillary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ancillary">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="ProductToAncillary">
+              <PropertyRef Name="AncillaryCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CancelRestriction_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="CancelRestriction" Type="Self.CancelRestriction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="CancelRestriction">
+              <PropertyRef Name="ProductCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CarrierAcceptanceRule_ProductCatalogue">
+          <End Role="ProductCatalogue" Type="Self.ProductCatalogue" Multiplicity="0..1" />
+          <End Role="CarrierAcceptanceRule" Type="Self.CarrierAcceptanceRule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductCatalogue">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="CarrierAcceptanceRule">
+              <PropertyRef Name="ProductCatalogueCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChangeRestriction_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="ChangeRestriction" Type="Self.ChangeRestriction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="ChangeRestriction">
+              <PropertyRef Name="ProductCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Market_ProductCatalogue">
+          <End Role="ProductCatalogue" Type="Self.ProductCatalogue" Multiplicity="0..1" />
+          <End Role="Market" Type="Self.Market" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductCatalogue">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Market">
+              <PropertyRef Name="ProductCatalogueCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Route_Market">
+          <End Role="Market" Type="Self.Market" Multiplicity="0..1" />
+          <End Role="Route" Type="Self.Route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Market">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Route">
+              <PropertyRef Name="MarketCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MinConnectTimeAcceptanceRule_ProductCatalogue">
+          <End Role="ProductCatalogue" Type="Self.ProductCatalogue" Multiplicity="0..1" />
+          <End Role="MinConnectTimeAcceptanceRule" Type="Self.MinConnectTimeAcceptanceRule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductCatalogue">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="MinConnectTimeAcceptanceRule">
+              <PropertyRef Name="ProductCatalogueCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OperatingLeg_Route">
+          <End Role="Route" Type="Self.Route" Multiplicity="0..1" />
+          <End Role="OperatingLeg" Type="Self.OperatingLeg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Route">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="OperatingLeg">
+              <PropertyRef Name="RouteCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductToAncillary_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductToAncillary" Type="Self.ProductToAncillary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="ProductToAncillary">
+              <PropertyRef Name="ProductCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransportVehicleToProducts_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="TransportVehicleToProducts" Type="Self.TransportVehicleToProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="TransportVehicleToProducts">
+              <PropertyRef Name="ProductCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Settlement_ProductCatalogue">
+          <End Role="ProductCatalogue" Type="Self.ProductCatalogue" Multiplicity="0..1" />
+          <End Role="Settlement" Type="Self.Settlement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductCatalogue">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Settlement">
+              <PropertyRef Name="ProductCatalogueCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransportVehicle_ProductCatalogue">
+          <End Role="ProductCatalogue" Type="Self.ProductCatalogue" Multiplicity="0..1" />
+          <End Role="TransportVehicle" Type="Self.TransportVehicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductCatalogue">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="TransportVehicle">
+              <PropertyRef Name="ProductCatalogueCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SeatAttribute_SeatMap">
+          <End Role="SeatMap" Type="Self.SeatMap" Multiplicity="0..1" />
+          <End Role="SeatAttribute" Type="Self.SeatAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SeatMap">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="SeatAttribute">
+              <PropertyRef Name="SeatMap" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SeatMap_TransportVehicleToProducts">
+          <End Role="TransportVehicleToProducts" Type="Self.TransportVehicleToProduct" Multiplicity="0..1" />
+          <End Role="SeatMap" Type="Self.SeatMap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransportVehicleToProducts">
+              <PropertyRef Name="TransportVehicleCode" />
+              <PropertyRef Name="ProductCode" />
+            </Principal>
+            <Dependent Role="SeatMap">
+              <PropertyRef Name="TransportVehicleCode" />
+              <PropertyRef Name="ProductCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransportVehicleToProducts_TransportVehicle">
+          <End Role="TransportVehicle" Type="Self.TransportVehicle" Multiplicity="1" />
+          <End Role="TransportVehicleToProducts" Type="Self.TransportVehicleToProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransportVehicle">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="TransportVehicleToProducts">
+              <PropertyRef Name="TransportVehicleCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AirlineEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AirlineFeatures" EntityType="Self.AirlineFeature" />
+          <EntitySet Name="AirlineTaxonomies" EntityType="Self.AirlineTaxonomy" />
+          <EntitySet Name="Ancillaries" EntityType="Self.Ancillary" />
+          <EntitySet Name="CancelRestrictions" EntityType="Self.CancelRestriction" />
+          <EntitySet Name="CarrierAcceptanceRules" EntityType="Self.CarrierAcceptanceRule" />
+          <EntitySet Name="ChangeRestrictions" EntityType="Self.ChangeRestriction" />
+          <EntitySet Name="Markets" EntityType="Self.Market" />
+          <EntitySet Name="MinConnectTimeAcceptanceRules" EntityType="Self.MinConnectTimeAcceptanceRule" />
+          <EntitySet Name="OperatingLegs" EntityType="Self.OperatingLeg" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="ProductCatalogues" EntityType="Self.ProductCatalogue" />
+          <EntitySet Name="ProductToAncillaries" EntityType="Self.ProductToAncillary" />
+          <EntitySet Name="Resources" EntityType="Self.Resource" />
+          <EntitySet Name="Routes" EntityType="Self.Route" />
+          <EntitySet Name="SeatAttributes" EntityType="Self.SeatAttribute" />
+          <EntitySet Name="SeatMaps" EntityType="Self.SeatMap" />
+          <EntitySet Name="Settlements" EntityType="Self.Settlement" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="TransportVehicles" EntityType="Self.TransportVehicle" />
+          <EntitySet Name="TransportVehicleToProducts" EntityType="Self.TransportVehicleToProduct" />
+          <AssociationSet Name="FK_AirlineFeature_AirlineTaxonomy" Association="Self.FK_AirlineFeature_AirlineTaxonomy">
+            <End Role="AirlineTaxonomy" EntitySet="AirlineTaxonomies" />
+            <End Role="AirlineFeature" EntitySet="AirlineFeatures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ancillary_ProductCatalogue" Association="Self.FK_Ancillary_ProductCatalogue">
+            <End Role="ProductCatalogue" EntitySet="ProductCatalogues" />
+            <End Role="Ancillary" EntitySet="Ancillaries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductToAncillary_Ancillary" Association="Self.FK_ProductToAncillary_Ancillary">
+            <End Role="Ancillary" EntitySet="Ancillaries" />
+            <End Role="ProductToAncillary" EntitySet="ProductToAncillaries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CancelRestriction_Product" Association="Self.FK_CancelRestriction_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="CancelRestriction" EntitySet="CancelRestrictions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CarrierAcceptanceRule_ProductCatalogue" Association="Self.FK_CarrierAcceptanceRule_ProductCatalogue">
+            <End Role="ProductCatalogue" EntitySet="ProductCatalogues" />
+            <End Role="CarrierAcceptanceRule" EntitySet="CarrierAcceptanceRules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChangeRestriction_Product" Association="Self.FK_ChangeRestriction_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ChangeRestriction" EntitySet="ChangeRestrictions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Market_ProductCatalogue" Association="Self.FK_Market_ProductCatalogue">
+            <End Role="ProductCatalogue" EntitySet="ProductCatalogues" />
+            <End Role="Market" EntitySet="Markets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Route_Market" Association="Self.FK_Route_Market">
+            <End Role="Market" EntitySet="Markets" />
+            <End Role="Route" EntitySet="Routes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MinConnectTimeAcceptanceRule_ProductCatalogue" Association="Self.FK_MinConnectTimeAcceptanceRule_ProductCatalogue">
+            <End Role="ProductCatalogue" EntitySet="ProductCatalogues" />
+            <End Role="MinConnectTimeAcceptanceRule" EntitySet="MinConnectTimeAcceptanceRules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OperatingLeg_Route" Association="Self.FK_OperatingLeg_Route">
+            <End Role="Route" EntitySet="Routes" />
+            <End Role="OperatingLeg" EntitySet="OperatingLegs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductToAncillary_Product" Association="Self.FK_ProductToAncillary_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductToAncillary" EntitySet="ProductToAncillaries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransportVehicleToProducts_Product" Association="Self.FK_TransportVehicleToProducts_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="TransportVehicleToProducts" EntitySet="TransportVehicleToProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Settlement_ProductCatalogue" Association="Self.FK_Settlement_ProductCatalogue">
+            <End Role="ProductCatalogue" EntitySet="ProductCatalogues" />
+            <End Role="Settlement" EntitySet="Settlements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransportVehicle_ProductCatalogue" Association="Self.FK_TransportVehicle_ProductCatalogue">
+            <End Role="ProductCatalogue" EntitySet="ProductCatalogues" />
+            <End Role="TransportVehicle" EntitySet="TransportVehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SeatAttribute_SeatMap" Association="Self.FK_SeatAttribute_SeatMap">
+            <End Role="SeatMap" EntitySet="SeatMaps" />
+            <End Role="SeatAttribute" EntitySet="SeatAttributes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SeatMap_TransportVehicleToProducts" Association="Self.FK_SeatMap_TransportVehicleToProducts">
+            <End Role="TransportVehicleToProducts" EntitySet="TransportVehicleToProducts" />
+            <End Role="SeatMap" EntitySet="SeatMaps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransportVehicleToProducts_TransportVehicle" Association="Self.FK_TransportVehicleToProducts_TransportVehicle">
+            <End Role="TransportVehicle" EntitySet="TransportVehicles" />
+            <End Role="TransportVehicleToProducts" EntitySet="TransportVehicleToProducts" />
+          </AssociationSet>
+          <EntitySet Name="Airlines" EntityType="AirlineModel.Airline" />
+          <AssociationSet Name="AirlineProductCatalogue" Association="AirlineModel.AirlineProductCatalogue">
+            <End Role="Airline" EntitySet="Airlines" />
+            <End Role="ProductCatalogue" EntitySet="ProductCatalogues" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Airline">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Single" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <NavigationProperty Name="ProductCatalogues" Relationship="AirlineModel.AirlineProductCatalogue" FromRole="Airline" ToRole="ProductCatalogue" />
+          <Property Name="Name" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="AirlineProductCatalogue">
+          <End Type="AirlineModel.Airline" Role="Airline" Multiplicity="1" />
+          <End Type="AirlineModel.ProductCatalogue" Role="ProductCatalogue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Airline">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="ProductCatalogue">
+              <PropertyRef Name="AirlineCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AirlineModelStoreContainer" CdmEntityContainer="AirlineEntities">
+    <EntitySetMapping Name="AirlineFeatures">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.AirlineFeature)">
+        <MappingFragment StoreEntitySet="AirlineFeatures">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AirlineTaxonomyCode" ColumnName="AirlineTaxonomyCode" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Vale" ColumnName="Vale" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AirlineTaxonomies">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.AirlineTaxonomy)">
+        <MappingFragment StoreEntitySet="AirlineTaxonomies">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AnyParentCode" ColumnName="AnyParentCode" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ancillaries">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.Ancillary)">
+        <MappingFragment StoreEntitySet="Ancillaries">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ProductCatalogueCode" ColumnName="ProductCatalogueCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CancelRestrictions">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.CancelRestriction)">
+        <MappingFragment StoreEntitySet="CancelRestrictions">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarrierAcceptanceRules">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.CarrierAcceptanceRule)">
+        <MappingFragment StoreEntitySet="CarrierAcceptanceRules">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ProductCatalogueCode" ColumnName="ProductCatalogueCode" />
+          <ScalarProperty Name="TransportDesignator" ColumnName="TransportDesignator" />
+          <ScalarProperty Name="AccountingCode" ColumnName="AccountingCode" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Accepted" ColumnName="Accepted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChangeRestrictions">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.ChangeRestriction)">
+        <MappingFragment StoreEntitySet="ChangeRestrictions">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Markets">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.Market)">
+        <MappingFragment StoreEntitySet="Markets">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ProductCatalogueCode" ColumnName="ProductCatalogueCode" />
+          <ScalarProperty Name="LocationOne" ColumnName="LocationOne" />
+          <ScalarProperty Name="LocationTwo" ColumnName="LocationTwo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MinConnectTimeAcceptanceRules">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.MinConnectTimeAcceptanceRule)">
+        <MappingFragment StoreEntitySet="MinConnectTimeAcceptanceRules">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ProductCatalogueCode" ColumnName="ProductCatalogueCode" />
+          <ScalarProperty Name="TransportDesignator" ColumnName="TransportDesignator" />
+          <ScalarProperty Name="AccountingCode" ColumnName="AccountingCode" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="Onward" ColumnName="Onward" />
+          <ScalarProperty Name="Min" ColumnName="Min" />
+          <ScalarProperty Name="Max" ColumnName="Max" />
+          <ScalarProperty Name="Accepted" ColumnName="Accepted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OperatingLegs">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.OperatingLeg)">
+        <MappingFragment StoreEntitySet="OperatingLegs">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="RouteCode" ColumnName="RouteCode" />
+          <ScalarProperty Name="TransportVehicle" ColumnName="TransportVehicle" />
+          <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+          <ScalarProperty Name="DepartureDay" ColumnName="DepartureDay" />
+          <ScalarProperty Name="ServiceStart" ColumnName="ServiceStart" />
+          <ScalarProperty Name="ServiceEnd" ColumnName="ServiceEnd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.Product)">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductCatalogues">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.ProductCatalogue)">
+        <MappingFragment StoreEntitySet="ProductCatalogues">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="TransportDesignator" ColumnName="TransportDesignator" />
+          <ScalarProperty Name="AccountingCode" ColumnName="AccountingCode" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductToAncillaries">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.ProductToAncillary)">
+        <MappingFragment StoreEntitySet="ProductToAncillaries">
+          <ScalarProperty Name="AncillaryCode" ColumnName="AncillaryCode" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="Optional" ColumnName="Optional" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resources">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.Resource)">
+        <MappingFragment StoreEntitySet="Resources">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AnyParentCode" ColumnName="AnyParentCode" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Routes">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.Route)">
+        <MappingFragment StoreEntitySet="Routes">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="MarketCode" ColumnName="MarketCode" />
+          <ScalarProperty Name="DepartureLocation" ColumnName="DepartureLocation" />
+          <ScalarProperty Name="ArrivalLocation" ColumnName="ArrivalLocation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SeatAttributes">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.SeatAttribute)">
+        <MappingFragment StoreEntitySet="SeatAttributes">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="SeatMap" ColumnName="SeatMap" />
+          <ScalarProperty Name="Row" ColumnName="Row" />
+          <ScalarProperty Name="Column" ColumnName="Column" />
+          <ScalarProperty Name="Attributes" ColumnName="Attributes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SeatMaps">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.SeatMap)">
+        <MappingFragment StoreEntitySet="SeatMaps">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="TransportVehicleCode" ColumnName="TransportVehicleCode" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="Floor" ColumnName="Floor" />
+          <ScalarProperty Name="StartRow" ColumnName="StartRow" />
+          <ScalarProperty Name="EndRow" ColumnName="EndRow" />
+          <ScalarProperty Name="Columns" ColumnName="Columns" />
+          <ScalarProperty Name="Attributes" ColumnName="Attributes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Settlements">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.Settlement)">
+        <MappingFragment StoreEntitySet="Settlements">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ProductCatalogueCode" ColumnName="ProductCatalogueCode" />
+          <ScalarProperty Name="SettlmentTime" ColumnName="SettlmentTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.sysdiagram)">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransportVehicles">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.TransportVehicle)">
+        <MappingFragment StoreEntitySet="TransportVehicles">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ProductCatalogueCode" ColumnName="ProductCatalogueCode" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransportVehicleToProducts">
+      <EntityTypeMapping TypeName="IsTypeOf(AirlineModel.TransportVehicleToProduct)">
+        <MappingFragment StoreEntitySet="TransportVehicleToProducts">
+          <ScalarProperty Name="TransportVehicleCode" ColumnName="TransportVehicleCode" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
